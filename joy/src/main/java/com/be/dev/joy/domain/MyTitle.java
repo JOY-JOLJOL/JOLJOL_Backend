@@ -14,7 +14,7 @@ import org.hibernate.annotations.DynamicInsert;
 @NoArgsConstructor
 @AllArgsConstructor
 @DynamicInsert
-public class MyTitle {
+public class MyTitle extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,11 +22,11 @@ public class MyTitle {
     private Long id; // 타이틀 고유 ID
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pet_id")
+    @JoinColumn(name = "pet_id", nullable = false)
     private MyPet myPet;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "title_data_id")
+    @JoinColumn(name = "title_data_id", nullable = false)
     private TitleData titleData; // 도전과제 고유 ID
 
     @Column
