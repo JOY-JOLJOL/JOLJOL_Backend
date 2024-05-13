@@ -1,10 +1,18 @@
 HELP.md
-application-**.yml
-.gradle
-build/
+
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+
+## Build
+.gradle
+build/
+
+## File that stored metadata in MacOS
+.DS_Store
+
+## YML
+application-**.yml
 
 ### STS ###
 .apt_generated
