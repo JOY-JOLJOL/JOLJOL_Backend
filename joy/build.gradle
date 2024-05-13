@@ -41,6 +41,15 @@ dependencies {
 	implementation 'mysql:mysql-connector-java:8.0.32'
 }
 
+//yml submodule
+task copyYML(type: Copy){
+	copy{
+		from './JOLJOL_Backend_yml'
+		include "*.yml" , "*.json"
+		into './src/main/resources'
+	}
+}
+
 tasks.named('test') {
 	useJUnitPlatform()
 }

@@ -1,0 +1,3 @@
+[submodule "joy/JOLJOL_Backend_yml"]
+	path = joy/JOLJOL_Backend_yml
+	url = https://github.com/JOY-JOLJOL/JOLJOL_Backend_yml.git
