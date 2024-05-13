@@ -20,9 +20,9 @@ public class PetData {
     private Long petDataId; // 펫정보 고유 ID
 
     @Enumerated(EnumType.STRING)
-    @Column
+    @Column(nullable = false)
     private Breed breed; // 견종
 
-    @Column(length = 500, name = "img_url")
+    @Column(length = 500, name = "img_url", nullable = false)
     private String imgUrl; // 이미지
 }
