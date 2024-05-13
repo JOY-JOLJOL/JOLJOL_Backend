@@ -22,7 +22,7 @@ import java.util.Date;
 public class Member extends BaseTimeEntity {
 
     @Id
-    @Column(name = "member_id")
+    @Column(length = 16, name = "member_id")
     private String id; // 사용자가 입력하는 고유 ID
     
     @Column(nullable = false, length = 320)
