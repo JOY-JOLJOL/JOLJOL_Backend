@@ -36,7 +36,7 @@ public class MyPet {
     private Member member; // 사용자 고유 ID
 
     @Column(length = 8, nullable = false)
-    private String name;
+    private String name; // 강아지 이름
 
     @Column
     @ColumnDefault("0")
