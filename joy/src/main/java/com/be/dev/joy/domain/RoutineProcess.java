@@ -1,5 +1,6 @@
 package com.be.dev.joy.domain;
 
+import com.be.dev.joy.domain.pk.RoutineProcessPK;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -16,14 +17,8 @@ import org.hibernate.annotations.DynamicInsert;
 @DynamicInsert
 public class RoutineProcess {
 
-    @Id
-    @Column
-    private Integer week; // 주차
-
-    @Id
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "routine_id")
-    private Routine routine; // 스낵루틴 고유 ID
+    @EmbeddedId
+    private RoutineProcessPK routineProcessPK; // 복합키(주차, 스낵루틴 고유 ID)
     
     @Column
     @ColumnDefault("0")
