@@ -1,7 +1,7 @@
 package com.be.dev.joy.domain;
 
 import com.be.dev.joy.domain.enums.Goal;
-import com.be.dev.joy.domain.enums.Group;
+import com.be.dev.joy.domain.enums.Crew;
 import com.be.dev.joy.domain.enums.Mode;
 import com.be.dev.joy.domain.enums.Status;
 import jakarta.persistence.*;
@@ -63,7 +63,7 @@ public class Routine {
 
     @Enumerated(EnumType.STRING)
     @Column
-    private Group group; // 함께하는 집단
+    private Crew crew; // 함께하는 집단
 
     @Column
     private Integer persons; // 현재 인원
