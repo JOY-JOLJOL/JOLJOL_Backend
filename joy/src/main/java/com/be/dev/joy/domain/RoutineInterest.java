@@ -1,5 +1,6 @@
 package com.be.dev.joy.domain;
 
+import com.be.dev.joy.domain.pk.RoutineInterestPK;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,13 +14,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class RoutineInterest {
 
-    @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "member_id")
-    private Member member; // 사용자 고유 ID
-
-    @Id
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "routine_id")
-    private Routine routine; // 스낵루틴 고유 ID
+    @EmbeddedId
+    private RoutineInterestPK routineInterestPK; // 복합키(사용자 고유 ID, 스낵루틴 고유 ID)
 }
