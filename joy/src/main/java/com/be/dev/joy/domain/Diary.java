@@ -26,7 +26,7 @@ public class Diary extends BaseTimeEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pet_id")
-    private MyPet myPet;
+    private MyPet myPet; // 펫 ID
 
     @Column(name = "card_img_url")
     private String cardImgUrl; // 산책카드 img
