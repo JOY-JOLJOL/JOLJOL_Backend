@@ -6,6 +6,7 @@ import lombok.Getter;
 public enum Role {
 
     MEMBER("MEMBER"), // 일반사용자
+    TESTER("TESTER"), // 테스터
     ADMIN("ADMIN") // 관리자
     ;
 
