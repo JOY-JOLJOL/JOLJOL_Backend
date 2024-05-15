@@ -1,0 +1,24 @@
+spring:
+  #  mvc:
+  #    cors:
+  #      mapping: /**
+  #      allowed-origins:
+  #      allowed-methods: GET, POST, PUT, PATCH, DELETE
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/snowflowerthon
+    username: root
+    password: uckoo2021!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    open-in-view: false # 뷰 레이어에서의 지연 로딩이 비활성화(성능 이슈 방지)
+    hibernate:
+      ddl-auto: create # 애플리케이션 시작 시 데이터베이스 스키마를 유효성 검증만 하고, 변경은 수행하지 않음
+  logging:
+    level:
+      org:
+        hibernate:
+          type:
+            descriptor:
+              sql: info
