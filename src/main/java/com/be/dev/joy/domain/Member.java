@@ -46,6 +46,9 @@ public class Member extends BaseTimeEntity {
     @Column(nullable = false, name = "id_updated_at")
     private LocalDateTime idUpdatedAt; // 최근 아이디 변경일
 
+    @Column(name = "sns_id")
+    private String snsId; // SNS 사용자 고유 ID
+
     /**
      * 비밀번호를 암호화
      * @param passwordEncoder 암호화 할 인코더 클래스
