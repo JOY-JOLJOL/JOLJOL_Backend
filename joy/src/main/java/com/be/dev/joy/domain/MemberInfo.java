@@ -20,13 +20,13 @@ public class MemberInfo {
     @JoinColumn(name = "member_id")
     private Member member; // 사용자 고유 ID
     
-    @Column
+    @Column(nullable = false, length = 20)
     private String name; // 이름
 
-    @Column
+    @Column(nullable = false)
     private LocalDateTime birth; // 생일
 
-    @Column
+    @Column(nullable = false)
     private String location1; // 활동지역1
 
     @Column

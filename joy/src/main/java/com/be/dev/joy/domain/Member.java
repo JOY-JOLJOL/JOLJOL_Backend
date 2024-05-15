@@ -7,7 +7,11 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.annotations.ColumnDefault;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.time.LocalDateTime;
+import java.util.Date;
 
 @Slf4j
 @Getter
@@ -15,27 +19,32 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Member {
+public class Member extends BaseTimeEntity {
 
     @Id
-    @Column(name = "member_id")
+    @Column(length = 16, name = "member_id")
     private String id; // 사용자가 입력하는 고유 ID
     
-    @Column(length = 255)
+    @Column(nullable = false, length = 320)
     private String email; // 이메일
     
-    @Column(length = 18)
+    @Column(nullable = false, length = 18)
     private String password; // 비밀번호
 
     @Enumerated(EnumType.STRING)
-    @Column
-    private Channel channel;
-    
+    @Column(nullable = false)
+    private Channel channel; // 가입 경로
+
     @Column(name = "is_informed")
+    @ColumnDefault("false")
     private Boolean isInformed; // 추가 정보 설정 여부
     
     @Column(name = "is_onboard")
+    @ColumnDefault("false")
     private Boolean isOnboard; // 온보딩 수행 여부
+
+    @Column(nullable = false, name = "id_updated_at")
+    private LocalDateTime idUpdatedAt; // 최근 아이디 변경일
 
     /**
      * 비밀번호를 암호화

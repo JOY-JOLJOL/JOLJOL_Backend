@@ -5,13 +5,16 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ColumnDefault;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Entity
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class StrollStatistic {
+public class StrollStatisticDaily {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,18 +22,17 @@ public class StrollStatistic {
     private Long id; // 산책 기록 통계 고유 ID
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pet_id")
+    @JoinColumn(name = "pet_id", nullable = false)
     private MyPet myPet; // 펫 ID
 
-    @Column
-    private Integer year; // 연
+    @Column(nullable = false)
+    private LocalDateTime daily; // 날짜
     
     @Column
-    private Integer month; // 월
+    @ColumnDefault("0")
+    private Long count; // 운동 횟수
     
     @Column
-    private Integer count; // 운동 횟수
-    
-    @Column
-    private Integer step; // 걸음 수
+    @ColumnDefault("0")
+    private Long step; // 걸음 수
 }

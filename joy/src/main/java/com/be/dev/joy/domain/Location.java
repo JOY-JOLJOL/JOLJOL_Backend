@@ -15,7 +15,7 @@ public class Location {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "location_id")
+    @Column(name = "stroll_id")
     private Long id; // 산책 기록 고유 ID
 
     @Column(nullable = false)

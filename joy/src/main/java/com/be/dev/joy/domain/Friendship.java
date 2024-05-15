@@ -19,10 +19,10 @@ public class Friendship {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "from_member")
+    @JoinColumn(nullable = false, name = "from_member")
     private Member fromMember; // 팔로우 하는 사람
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "to_member")
+    @JoinColumn(nullable = false, name = "to_member")
     private Member toMember; // 팔로우 당하는 사람
 }

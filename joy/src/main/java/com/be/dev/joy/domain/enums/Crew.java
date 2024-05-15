@@ -3,15 +3,15 @@ package com.be.dev.joy.domain.enums;
 import lombok.Getter;
 
 @Getter
-public enum Group {
+public enum Crew {
     
     FRIEND("FRIEND"), // 친구
     LOCAL("LOCAL") // 지역
     ;
     
-    private final String group;
+    private final String crew;
     
-    Group(String group) {
-        this.group = group;
+    Crew(String crew) {
+        this.crew = crew;
     }
 }

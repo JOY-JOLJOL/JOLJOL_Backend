@@ -19,6 +19,6 @@ public class SymbolPet {
     private Member member; // 사용자 고유 ID
 
     @OneToOne
-    @JoinColumn(name = "pet_id")
+    @JoinColumn(name = "pet_id", nullable = false)
     private MyPet myPet; // 펫 ID
 }
