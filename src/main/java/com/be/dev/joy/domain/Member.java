@@ -1,6 +1,7 @@
 package com.be.dev.joy.domain;
 
 import com.be.dev.joy.domain.enums.Channel;
+import com.be.dev.joy.domain.enums.Role;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -48,6 +49,10 @@ public class Member extends BaseTimeEntity {
 
     @Column(name = "sns_id")
     private String snsId; // SNS 사용자 고유 ID
+
+    @Enumerated(EnumType.STRING)
+    @Column
+    private Role role; // 역할(관리자 계정 설정용)
 
     /**
      * 비밀번호를 암호화
