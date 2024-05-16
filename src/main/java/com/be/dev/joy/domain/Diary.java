@@ -38,9 +38,8 @@ public class Diary extends BaseTimeEntity {
     private String content; // 일기 내용
 
     @Enumerated(value = EnumType.STRING)
-    @Column
-    @ColumnDefault("WELL_DONE")
-    private Stamp stamp; // 스탬프
+    @Column(nullable = false)
+    private Stamp stamp = Stamp.WELL_DONE; // 스탬프, 디폴트 값 WELL_DONE
 
     @Enumerated(value = EnumType.STRING)
     @Column
